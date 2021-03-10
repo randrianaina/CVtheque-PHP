@@ -20,10 +20,13 @@ if (isset($_POST['submitModif'])){//si $POST non vide , Utile lorsque les donné
     // Lecture du fichier CSV 
         if ($monfichier = fopen('hrdata.csv', 'r'))
         {
+            /* UPDATE 10/3/21 Mieux de commancer de 0 pour ne pas suprimmer la 1ere ligne du csv (Nom, Prenom...) */
             $row = 0; // Variable pour numéroter les lignes
             $newcontenu = '';
             
             //Variable des valeurs des input
+
+            /* UPDATE 10/3/21 J'ai replacé PHP_EOL avec '"' . $_POST["idLigne"]. '"' */
             $nouvelle_ligne = '"' . $_POST["idLigne"]. '"' .';'.  $_POST["nom"] . ';' . $_POST["prenom"] . ';' . $_POST["age"] . '; ' . $_POST["datenaissance"] . ' ; ' . $_POST["adress1"] . ' ; ' . $_POST["adress2"] . ' ; ' . $_POST["cp"] . ' ; ' . $_POST["ville"] . ' ; ' . $_POST["telportable"] . ' ; ' . $_POST["telfixe"] . ' ; ' . $_POST["email"] . ' ; ' . $_POST["profil"] . ';' . $_POST['comp'] .' ; ' . $_POST["website"] . ' ; ' . $_POST["linkedin"] . ' ; ' . $_POST["viadeo"] . ' ; ' . $_POST["facebook"].PHP_EOL;
             
             // Lecture du fichier ligne par ligne :
@@ -53,6 +56,7 @@ if (isset($_POST['submitModif'])){//si $POST non vide , Utile lorsque les donné
 
             
         }
+    /* UPDATE 10/3/21 Redirection vers la page d'accueil */
     header('Location: index.php');       
 }
 
@@ -167,7 +171,7 @@ if (isset($_POST['submitModif'])){//si $POST non vide , Utile lorsque les donné
             <label class="special3" for="compétences">Veuillez saisir chacunes de vos compétences séparées par un ";" (minimum 5 compétences/maximum 10 compétences) Ne pas rajouter de ";" après la dernière compétence !!!!</label>
             <br>
             <!-- PROBLEME: UNE SEULE COMPETENCES ARRIVE DANS LE POST, le reste d'inputs pas-->
-            <!-- Je mets toute les comps dans un seul INPUT -->
+            <!-- UPDATE 10/3/21 Je mets toute les comps dans un seul INPUT -->
             <input type="text" class="widget" name="comp" placeholder="Veuillez saisir chacunes de vos compétences séparées par un ; (minimum 5 compétences/maximum 10 compétences)" style="width:80%; height: 100px; margin-left: auto; margin-right: auto;display: block;margin-top: 20px;" value="<?php for($i=13; $i < 23; $i++) {echo(null($colonne[$i]. ';')); } ?>" >
 
 
