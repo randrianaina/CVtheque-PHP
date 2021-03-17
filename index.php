@@ -1,6 +1,44 @@
 <?php 
 include_once('fonctions.php');
 
+if (isset($_POST['submitDelete'])){//si $POST non vide , Utile lorsque les données sont vides
+    $monfichier=array();
+
+    /* header('Location: index.php');   */
+    /* print_r($_POST['idCarte']); */
+    if ($monfichier = fopen('hrdata.csv', 'r'))
+    {
+
+    $row = 0; // Variable pour numéroter les lignes
+    $newcontenu = '';
+    $nouvelle_ligne = "";
+    
+    while (($ligne = fgets($monfichier)) !== FALSE)
+        {
+            //Comparaison de la valeur de $row avec l'id de la ligne du candidat
+                //Si valeur de $row = à l'id de la ligne du candidat
+            if ($row == $_POST['idCarte'])
+            {
+                $newcontenu = $newcontenu . $nouvelle_ligne;
+                echo 'true';
+            }
+            else{
+            
+            $newcontenu = $newcontenu . $ligne;
+            echo 'false';
+        }
+            $row++;    
+            
+        }
+        
+        fclose($monfichier); 
+            $fichierecriture = fopen('hrdata.csv', 'w');//ouverture en écriture du fichier
+            fputs($fichierecriture, $newcontenu);//écriture de l'ensemble + ajout nouvelle ligne
+            fclose($fichierecriture);
+
+}
+}
+
 //print_r($_POST);
 ?>
 
@@ -100,6 +138,7 @@ include_once('fonctions.php');
         <main>
             <?php for ($i=0; $i<count($results);$i++) { //Parcourir le .csv ?>  
                 <section class='cartes shadow'>
+
                     <!-- AJOUT V du 06/07 + LIGNES CSS 234 à 292 -->
                     <section class='cardButtons'>
                         <form action="formulaire_modif.php" method="POST">
@@ -108,11 +147,14 @@ include_once('fonctions.php');
                             <i class="fas fa-pencil-alt fa-1x"></i>
                             </button>
                         </form>
-                        <a href="formulaire.php" class="button" title="Supprimer">
-                            <button type="submit" class='supprimer'>
+
+                        <form action="index.php" method="POST">
+                            <?php echo '<input name="idCarte" value="' . $results[$i] [0] . '" style="display: none">'; ?>
+                            <button name='submitDelete' type="submit" class='supprimer'>
                                 <i class="fas fa-trash-alt fa-1x"></i>
                             </button>
-                        </a>
+                            <!-- <input name='submitDelete' type="submit" value='poubelle'> -->
+                        </form>
                     </section>
                     
                     <!-- JUSQUE LA -->        
