@@ -265,6 +265,51 @@
 }
  }
 
+ function modif ($a,$b,$c,$d,$e,$f,$g,$h,$i,$j,$k,$l,$m,$n,$o,$p,$q,$r,$s){
+    
+    $monfichier=array();
+    
+    // Lecture du fichier CSV 
+        if ($monfichier = fopen('hrdata.csv', 'r'))
+        {
+            /* UPDATE 10/3/21 Mieux de commancer de 0 pour ne pas suprimmer la 1ere ligne du csv (Nom, Prenom...) */
+            $row = 0; // Variable pour numéroter les lignes
+            $newcontenu = '';
+            
+            //Variable des valeurs des input
+
+            /* UPDATE 10/3/21 J'ai replacé PHP_EOL avec '"' . $_POST["idLigne"]. '"' */
+            $nouvelle_ligne = '"' .$a. '"' .';'.  $b . ';' . $c . ';' . $d . '; ' . $e . ' ; ' . $f . ' ; ' . $g . ' ; ' . $h . ' ; ' . $i . ' ; ' . $j . ' ; ' . $k . ' ; ' . $l . ' ; ' . $m . ';' . $n .' ; ' . $o . ' ; ' . $p . ' ; ' . $q . ' ; ' . $r.PHP_EOL;
+            
+            // Lecture du fichier ligne par ligne :
+            while (($ligne = fgets($monfichier)) !== FALSE)
+            {
+                //Comparaison de la valeur de $row avec l'id de la ligne du candidat
+                    //Si valeur de $row = à l'id de la ligne du candidat
+                if ($row == $a)
+                {
+                    $newcontenu = $newcontenu . $nouvelle_ligne;
+                    echo 'true';
+                }
+                else{
+                
+                $newcontenu = $newcontenu . $ligne;
+                echo 'false';
+            }
+                $row++;    
+                
+            }
+            fclose($monfichier); 
+            $fichierecriture = fopen('hrdata.csv', 'w');//ouverture en écriture du fichier
+            fputs($fichierecriture, $newcontenu);//écriture de l'ensemble + ajout nouvelle ligne
+            fclose($fichierecriture);
+
+            
+        }
+    /* UPDATE 10/3/21 Redirection vers la page d'accueil */
+    header('Location: index.php');       
+ }
+
 
     
 

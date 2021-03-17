@@ -15,51 +15,9 @@ foreach ($results as $resultsLigne) {
 // Update 10/03/2021
     // Si bouton ENVOYER LE FORMULAIRE 
 if (isset($_POST['submitModif'])){//si $POST non vide , Utile lorsque les données sont vides
+    modif($_POST["idLigne"],$_POST["nom"],$_POST["prenom"],$_POST["age"],$_POST["datenaissance"],$_POST["adress1"],$_POST["adress2"],$_POST["cp"],$_POST["ville"],$_POST["telportable"],$_POST["telfixe"],$_POST["email"],$_POST["profil"],$_POST['comp'],$_POST["website"],$_POST["linkedin"],$_POST["viadeo"],$_POST["facebook"]);
     
-    $monfichier=array();
-    // Lecture du fichier CSV 
-        if ($monfichier = fopen('hrdata.csv', 'r'))
-        {
-            /* UPDATE 10/3/21 Mieux de commancer de 0 pour ne pas suprimmer la 1ere ligne du csv (Nom, Prenom...) */
-            $row = 0; // Variable pour numéroter les lignes
-            $newcontenu = '';
-            
-            //Variable des valeurs des input
-
-            /* UPDATE 10/3/21 J'ai replacé PHP_EOL avec '"' . $_POST["idLigne"]. '"' */
-            $nouvelle_ligne = '"' . $_POST["idLigne"]. '"' .';'.  $_POST["nom"] . ';' . $_POST["prenom"] . ';' . $_POST["age"] . '; ' . $_POST["datenaissance"] . ' ; ' . $_POST["adress1"] . ' ; ' . $_POST["adress2"] . ' ; ' . $_POST["cp"] . ' ; ' . $_POST["ville"] . ' ; ' . $_POST["telportable"] . ' ; ' . $_POST["telfixe"] . ' ; ' . $_POST["email"] . ' ; ' . $_POST["profil"] . ';' . $_POST['comp'] .' ; ' . $_POST["website"] . ' ; ' . $_POST["linkedin"] . ' ; ' . $_POST["viadeo"] . ' ; ' . $_POST["facebook"].PHP_EOL;
-            
-            // Lecture du fichier ligne par ligne :
-            while (($ligne = fgets($monfichier)) !== FALSE)
-            {
-                //Comparaison de la valeur de $row avec l'id de la ligne du candidat
-                    //Si valeur de $row = à l'id de la ligne du candidat
-                if ($row == $_POST['idLigne'])
-                {
-                    $newcontenu = $newcontenu . $nouvelle_ligne;
-                    echo 'true';
-                }
-                else{
-                
-                $newcontenu = $newcontenu . $ligne;
-                echo 'false';
-            }
-                $row++;    
-                
-            }
-            
-            /* print_r($newcontenu); */
-            fclose($monfichier); 
-            $fichierecriture = fopen('hrdata.csv', 'w');//ouverture en écriture du fichier
-            fputs($fichierecriture, $newcontenu);//écriture de l'ensemble + ajout nouvelle ligne
-            fclose($fichierecriture);
-
-            
-        }
-    /* UPDATE 10/3/21 Redirection vers la page d'accueil */
-    header('Location: index.php');       
 }
-
 ?>
        
     

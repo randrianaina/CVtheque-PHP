@@ -1,12 +1,10 @@
 <?php 
 include_once('fonctions.php');
 
-if (isset($_POST['submitDelete'])){//si $POST non vide , Utile lorsque les données sont vides
+if (isset($_POST['submitDelete']))
+{
    delete($_POST['idCarte']);
 }
-
-
-//print_r($_POST);
 ?>
 
 
