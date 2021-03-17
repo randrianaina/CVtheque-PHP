@@ -233,23 +233,37 @@
         }
     }
 
-
+ function delete ($i){
     
-        
-        /* $resultsModifie = $results; */
-       /*  $fichierecriture = fopen('hrdata.csv', 'w'); *///ouverture en écriture du fichier
-        /* fputs($fichierecriture, $resultsModifie); */
-        /* foreach ($resultsModifie as $newArray) {
-            foreach ($newArray as $newLigne) {
-            var_dump($newligne);
-            fputcsv($fichierecriture, $newLigne, ";");//écriture de l'ensemble + ajout nouvelle ligne
+    $monfichier=array();
+
+    if ($monfichier = fopen('hrdata.csv', 'r'))
+    {
+    $row = 0; // Variable pour numéroter les lignes
+    $newcontenu = '';
+    $nouvelle_ligne = "";
+    
+    while (($ligne = fgets($monfichier)) !== FALSE)
+        {
+            //Comparaison de la valeur de $row avec l'id de la ligne du candidat
+                //Si valeur de $row = à l'id de la ligne du candidat
+            if ($row == $i)
+            {
+                $newcontenu = $newcontenu . $nouvelle_ligne;
             }
+            else
+            {
+            $newcontenu = $newcontenu . $ligne;
         }
-        fclose($fichierecriture); */
+            $row++;       
+        }
         
-
-
- /*    } */
+        fclose($monfichier); 
+        $fichierecriture = fopen('hrdata.csv', 'w');//ouverture en écriture du fichier
+        fputs($fichierecriture, $newcontenu);//écriture de l'ensemble + ajout nouvelle ligne
+        fclose($fichierecriture);
+}
+ }
 
 
     

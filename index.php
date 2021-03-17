@@ -2,42 +2,9 @@
 include_once('fonctions.php');
 
 if (isset($_POST['submitDelete'])){//si $POST non vide , Utile lorsque les données sont vides
-    $monfichier=array();
-
-    /* header('Location: index.php');   */
-    /* print_r($_POST['idCarte']); */
-    if ($monfichier = fopen('hrdata.csv', 'r'))
-    {
-
-    $row = 0; // Variable pour numéroter les lignes
-    $newcontenu = '';
-    $nouvelle_ligne = "";
-    
-    while (($ligne = fgets($monfichier)) !== FALSE)
-        {
-            //Comparaison de la valeur de $row avec l'id de la ligne du candidat
-                //Si valeur de $row = à l'id de la ligne du candidat
-            if ($row == $_POST['idCarte'])
-            {
-                $newcontenu = $newcontenu . $nouvelle_ligne;
-                echo 'true';
-            }
-            else{
-            
-            $newcontenu = $newcontenu . $ligne;
-            echo 'false';
-        }
-            $row++;    
-            
-        }
-        
-        fclose($monfichier); 
-            $fichierecriture = fopen('hrdata.csv', 'w');//ouverture en écriture du fichier
-            fputs($fichierecriture, $newcontenu);//écriture de l'ensemble + ajout nouvelle ligne
-            fclose($fichierecriture);
-
+   delete($_POST['idCarte']);
 }
-}
+
 
 //print_r($_POST);
 ?>
