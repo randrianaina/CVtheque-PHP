@@ -42,7 +42,7 @@ if (isset($_POST['submitModif'])) { //si $POST non vide , Utile lorsque les donn
     <center> CVTHEQUE </center>
 </h1>
 
-<body>
+<body id='formulaire'>
     <a href='index.php' class='m-5'>
         <h1>CVTHEQUE</h1>
     </a>
