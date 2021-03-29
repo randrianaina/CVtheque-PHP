@@ -211,7 +211,7 @@ if (isset($_POST['submitDelete']))
     </section>
 
     <button id='ajouter'> 
-        <a href="formulaire.php" title="Ajouter">
+        <a href="formulaire_ajout.php" title="Ajouter">
             <i class="fas fa-plus fa-3x"></i> 
         </a>
     </button>

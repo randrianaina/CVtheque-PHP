@@ -1,7 +1,30 @@
+body {
+    background: rgb(61, 53, 164);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
+    font-size: 4rem;
+    color: #52dadaf1;
+    text-shadow: 2px -10px 7px #152020;
+}
+
+h2{
+    text-align: center;
+    text-decoration: none !important;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+
 /* ACUEIL */
     #accueil {
         /* Ex Body */
-        background-color: rgb(32, 32, 135);
+        /* background-color: rgb(46, 41, 125); */
         font-family: "Yanone Kaffeesatz", sans-serif;
 
         p {
@@ -10,14 +33,7 @@
         }
 
         /* PAGE TITLE */
-            h1 {
-                text-align: center;
-                font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-                    sans-serif;
-                font-size: 4rem;
-                color: #52dadaf1;
-                text-shadow: 2px -10px 7px #152020;
-            }
+            
         /**/
 
 
@@ -351,47 +367,40 @@
 
 /* FORMULAIRE */
 #formulaire {
-background-color: rgb(32, 32, 135);
+    /* background-color: rgb(32, 32, 135); */
+    color: white;
     input {
-        border-radius: 10px;
+        border-radius: 10px !important;
+        border: none;
+        &:focus {
+            border-color: #000000 !important;
+        }
     }
 
     #age{
         display:flex;
     }
 
-    h1 {
-        text-align: center;
-        font-family: 'Montserrat Subrayada', sans-serif;
-        font-size: 4rem;
-        color: #52dadaf1;
-        text-shadow: 2px -10px 7px #152020;
-    }
 
-    h2{
-        display: flex; 
-        justify-content: center;
-        font-family: 'Montserrat Subrayada', sans-serif;
-    }
-
-    #footerprofil{
+    /* #footerprofil{
         display:flex;
         flex-direction:row;
-    }
+    } */
 
     label{
-        margin-left: 60px; 
-        margin-bottom: 1px;
-    }
-
-    .labeli{
-        margin-left:0px;
+        /* margin-left: 60px; 
+        margin-bottom: 1px; */
+        font-size: 20px;
         
     }
 
+    /* .labeli{
+        margin-left:0px;
+    } */
+
+    //Date naissance
     .special1{
-        width: 150px;    
-        margin-left: 60px; 
+        width: 20%;    
         margin-bottom: 20px; 
         margin-top: 20px; 
         background-color: #e8eeef; 
@@ -402,8 +411,9 @@ background-color: rgb(32, 32, 135);
         background: #FFFFFF;
     }
 
+    //Age
     .special2{
-        width: 50px;    
+        width: 55px;    
         margin-left: 60px; 
         margin-bottom: 20px; 
         margin-top: 20px; 
@@ -431,6 +441,7 @@ background-color: rgb(32, 32, 135);
                 );
     }
 
+    //Competences
     .special3{
         justify-content: center;
         display:flex;
@@ -439,18 +450,18 @@ background-color: rgb(32, 32, 135);
     }
 
     hr{
-        width:50%;
+        width:80%;
         margin-top: 50px;
         margin-bottom: 50px;
     }
     .widget{
         
-        border: solid 1px #E5E5E5;
+        border: none;
         padding: 9px;
         display:block;
         font-size:16px;
         background: #FFFFFF;
-        background: 
+        /* background: 
             -webkit-gradient(
                 linear, 
                 left top, 
@@ -465,11 +476,12 @@ background-color: rgb(32, 32, 135);
                 #FFFFFF,
                 #EEEEEE 1px, 
                 #FFFFFF 25px
-                );
-        margin-left: 60px;
-        width: 450px; 
+                ); */
+        /* margin-left: 60px; */
+        width: 100%; 
         margin-bottom: 20px; 
         margin-top: 20px;
+        margin-right: 0px;
 
     }
 
@@ -495,10 +507,10 @@ background-color: rgb(32, 32, 135);
                 #EEEEEE 1px, 
                 #FFFFFF 25px
                 );
-        width: 300px;
+        width: 100%; 
         margin-bottom: 20px; 
-        margin-top: 20px; 
-        margin-left: 60px;
+        margin-top: 20px;
+        margin-right: 0px;
         
     }
 
@@ -526,18 +538,14 @@ background-color: rgb(32, 32, 135);
                 #FFFFFF 25px
                 );
         
-
+        width:100%;
     }
 
     .widget4{
-        margin:10px auto 10px auto;
-        display:flex;
-        justify-content: center;
-        align-items: center;
+        display:block;
         font-family: 'Yanone Kaffeesatz', sans-serif;
         border-radius: 5px;
         border: unset;
-
         input[type=button] {
             background-color: #42588b;
         }
@@ -570,7 +578,7 @@ background-color: rgb(32, 32, 135);
         color:rgb(0, 0, 0);
         border-radius: 10px;
         height: 40px;
-        width: 300px;
+        width: 330px;
         font-family: 'Yanone Kaffeesatz', sans-serif;
         font-weight: bolder;
         border: unset;
@@ -590,7 +598,7 @@ background-color: rgb(32, 32, 135);
     }
 
     /* RESPONSIVE */
-        @media screen and (max-width:1216px){
+        /* @media screen and (max-width:1216px){
                     
                 #colonne1fiche{
                     width:90%;
@@ -693,7 +701,7 @@ background-color: rgb(32, 32, 135);
             .colonneprofil{
                 width:70%;
             }
-        }
+        } */
    /*  */
 
    /* RETURN BUTTON */

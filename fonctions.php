@@ -262,10 +262,12 @@
         $fichierecriture = fopen('hrdata.csv', 'w');//ouverture en écriture du fichier
         fputs($fichierecriture, $newcontenu);//écriture de l'ensemble + ajout nouvelle ligne
         fclose($fichierecriture);
-}
+    }   
+    /* UPDATE 28/03/21: Redirection vers la page d'accueil, pour actualiser les cartes affichees */
+    header('Location: index.php'); 
  }
 
- function modif ($a,$b,$c,$d,$e,$f,$g,$h,$i,$j,$k,$l,$m,$n,$o,$p,$q,$r,$s){
+ function modif ($a,$b,$c,$d,$e,$f,$g,$h,$i,$j,$k,$l,$m,$n,$o,$p,$q,$r){
     
     $monfichier=array();
     
@@ -309,9 +311,3 @@
     /* UPDATE 10/3/21 Redirection vers la page d'accueil */
     header('Location: index.php');       
  }
-
-
-    
-
-
-?> 
