@@ -38,10 +38,6 @@ if (isset($_POST['submitModif'])) { //si $POST non vide , Utile lorsque les donn
     <!-- CSS NEW -->
     <link href='CSS/style.css' rel='stylesheet' type='text/css'>
 </head>
-<h1>
-    <center> CVTHEQUE </center>
-</h1>
-
 <body id='formulaire'>
     <a href='index.php' class='m-5'>
         <h1>CVTHEQUE</h1>
