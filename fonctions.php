@@ -18,19 +18,6 @@
 
     //MOTEUR RECHERCHE
     $results=array(); // Déclaration d'une table pour stocker les résultats de la recherche
-
-
-
-
-    /* $data_cv = array();
-        foreach($csv as $column) {
-            if ($column!="NULL") {	
-                $data_cv[]=$column;
-            } else {
-                $data_cv[]="";
-            }
-        }
-        print_r($data_cv); */
     
 
     //fonction de nettoyage des accents pour une chaîne de caractères 
@@ -44,11 +31,7 @@
         return str_replace($tofind,$replac,$chaine); 
     }
 
-        
-        
     
-
-            
     if ($_POST) {
          
         if (isset($_POST['saisie'])){
@@ -108,11 +91,11 @@
                 
             if ($_POST['Nom']=='Croissant') { //On a remplace 'asc' avec 'Croissant' pour relier au <select>;
                 array_multisort($noms, SORT_ASC, $results);
-                //print_r($noms);
+                
                 
             } elseif ($_POST['Nom']=='Décroissant') {
                 array_multisort($noms, SORT_DESC, $results);
-                //print_r($noms);
+                
             }
         }
         
@@ -125,16 +108,13 @@
                 
         
             if($_POST['Ville']=='Croissant'){
-                //$selectville="--Veuillez sélectionner une option--";
                 array_multisort($ville, SORT_ASC, $results);
-                // print PHP_EOL;
-                //print_r($ville);  
+               
             }
 
             elseif ($_POST['Ville']=='Décroissant'){
                 array_multisort($ville, SORT_DESC, $results);
-                //print PHP_EOL;
-                //print_r($ville);
+                
             }
             }
 
@@ -146,17 +126,14 @@
                 
                 }
                 if($_POST['Profil']=='Croissant'){
-                    //$selectprofil="--Veuillez sélectionner une option--";
                     array_multisort($profil, SORT_ASC, $results);
-                    //print PHP_EOL;
-                    //print_r($profil);
+                   
                         
                 }
 
                 elseif ($_POST['Profil']=='Décroissant'){
                     array_multisort($profil, SORT_DESC, $results);
-                    //print PHP_EOL;
-                    //print_r($profil);
+                
                 }
             }
 
@@ -164,22 +141,18 @@
             if(isset($_POST['Age'])){
                 $age=array ();
                 for ($i=0;$i<=count($results)-1;$i++) {
-                //$age[] = $csv[$i][3];
                 $age[] = age($results[$i][4]); //07/07/2020 :copie-coller depuis accueil.php ; $result remplacer par $age
             
                 }
                 if($_POST['Age']=='Croissant'){
-                    //$selectprofil="--Veuillez sélectionner une option--";
                     array_multisort($age, SORT_ASC, $results);
-                    //print PHP_EOL;
-                //print_r($age);
+                    
                         
                 }
         
                 elseif ($_POST['Age']=='Décroissant'){
                     array_multisort($age, SORT_DESC, $results);
-                    //print PHP_EOL;
-                    //print_r($age);
+                   
                 }
         
             }
@@ -198,24 +171,20 @@
             //création des milisecondes par mktime et valeur timestamp contient les milisecondes 
                 // UPDATE : 27_02_2021 > ajout intval pour convertir string en int 
             $timestampN = mktime (0,0,0,  intval($mois1), intval($jour1), intval($annee1));
-            //timestampN = naissance;
             
-            /*ci-dessous vérif valeur timestamp = 709336800 est donc = 24/06/1992*/
-            //echo $timestampn;
-            /* print PHP_EOL; */
             
+           
             $today = date("j,m,Y");
             /*test date du jour*/
-            //echo $today;
+           
             list($jour2, $mois2, $annee2) = explode (',', $today);
             
             $timestampT = mktime (0,0,0,  $mois2, $jour2, $annee2);
             /*ci-dessous vérif valeur timestamp = 1593468000 est donc = 30/06/2020 attention maj date du jour*/
-            //echo $timestampt;
+           
             
             $timestampAGE=$timestampT-$timestampN;
-            /*test timestamp age*/
-            //print $timestampage;
+            
             
             //31556926(secondes) est égal à 1 an
             $age=$timestampAGE/31556926;

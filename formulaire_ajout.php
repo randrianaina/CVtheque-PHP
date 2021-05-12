@@ -1,15 +1,4 @@
 <?php
-// Récupération de mon tableau
-//print_r ($_POST);
-//$file = fopen('hrdata.csv', 'r'); /* print_r($csv);*/
-//while (!feof($file) ) { // boucle pour lire tout le tableau = !feof=jusqu'à la fin du fichier
-
-//$csv[] = fgetcsv($file, 1024, ";"); 
-//}
-//fclose($file); //fermer le fichier 
-?>
-
-<?php
 
 if ($_POST) { //si $POST non vide , Utile lorsque les données sont vides
     // Lecture du fichier CSV en mode W.
@@ -19,9 +8,6 @@ if ($_POST) { //si $POST non vide , Utile lorsque les données sont vides
 
         $row = 1; // Variable pour numéroter les lignes
         $newcontenu = '';
-        // Variable contenant la nouvelle ligne :
-        /*$nouvelle_ligne = $_POST['nom'] . ' ' . $_POST['prenom'] . '    ' . $_POST['age'] . '  ' . $_POST['date de naissance'] . ' ' . $_POST['code postal'] . ' '. $_POST['ville'] . "\r\n";*/
-
         print_r($monfichier);
 
         // Lecture du fichier ligne par ligne :
@@ -36,33 +22,14 @@ if ($_POST) { //si $POST non vide , Utile lorsque les données sont vides
         fclose($monfichier);
         // UPDATE : 27_02_2021 : ajout de PHP_EOL pour le saut de ligne 
         $nouvelle_ligne = PHP_EOL . $row . ';' .  $_POST["nom"] . ';' . $_POST["prenom"] . ';' . $_POST["age"] . '; ' . $_POST["datenaissance"] . ' ; ' . $_POST["adress1"] . ' ; ' . $_POST["adress2"] . ' ; ' . $_POST["cp"] . ' ; ' . $_POST["ville"] . ' ; ' . $_POST["telportable"] . ' ; ' . $_POST["telfixe"] . ' ; ' . $_POST["email"] . ' ; ' . $_POST["profil"] . ';' . $_POST['comp'] . ' ; ' . $_POST["website"] . ' ; ' . $_POST["linkedin"] . ' ; ' . $_POST["viadeo"] . ' ; ' . $_POST["facebook"];
-
-        //';'.$_POST['comp1'].';'.$_POST['comp2'].';'.$_POST['comp3'].';'.$_POST['comp4'].';'.$_POST['comp5'].';'.$_POST['comp6'].';'.$_POST['comp7'].';'.$_POST['comp8'].';'.$_POST['comp9'].';'.$_POST['comp10'].
-
         $newcontenu = $newcontenu . $nouvelle_ligne; //rajout d'une nouvelle ligne 
-
-
         $fichierecriture = fopen('hrdata.csv', 'w'); //ouverture en écriture du fichier
         fputs($fichierecriture, $newcontenu); //écriture de l'ensemble + ajout nouvelle ligne
         fclose($fichierecriture);
 
-
-        /* 
-        var_dump($row); */
-        /*  var_dump($newcontenu);  */
-
-
-
-        /* print_r($newcontenu); */
     }
 }
 
-
-
-
-/* print PHP_EOL;
-
-var_dump($_POST['datenaissance']); */
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +39,6 @@ var_dump($_POST['datenaissance']); */
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5f43c40889.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="formulaire.css">
     <title>Ajouter un candidat</title>
 
 
@@ -83,6 +49,7 @@ var_dump($_POST['datenaissance']); */
     <!-- CSS NEW -->
     <link href='CSS/style.css' rel='stylesheet' type='text/css'>
 </head>
+
 <body id='formulaire'>
     <a href='index.php' class='m-5'>
         <h1>CVTHEQUE</h1>

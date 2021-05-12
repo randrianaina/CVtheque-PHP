@@ -19,16 +19,12 @@ if (isset($_POST['submitModif'])) { //si $POST non vide , Utile lorsque les donn
 }
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Modification Candidat</title>
 
     <!-- Bootstrap -->
@@ -38,6 +34,7 @@ if (isset($_POST['submitModif'])) { //si $POST non vide , Utile lorsque les donn
     <!-- CSS NEW -->
     <link href='CSS/style.css' rel='stylesheet' type='text/css'>
 </head>
+
 <body id='formulaire'>
     <a href='index.php' class='m-5'>
         <h1>CVTHEQUE</h1>
