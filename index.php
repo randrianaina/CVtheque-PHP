@@ -40,7 +40,7 @@ if (isset($_POST['submitDelete']))
                 <label for="recherche par nom" style='font-size:20px'>Recherche</label>
                 <br>
                 <input type="search" id="RchNom" name="saisie" placeholder='Saisir ici'>
-                <button type='submit' class="search" id='submit' >Go</button>
+                <button type='submit' class="search" id='submit' >Ok</button>
             </form>
 
             <p class="triName col-xl-1 col-lg-1 col-md-6 col-3 d-flex align-items-center g-0">Trier par:</p>
@@ -55,7 +55,7 @@ if (isset($_POST['submitDelete']))
                                 <option <?php if (isset($selectnom) && $selectnom=="Croissant") echo "selected";?>>Croissant</option>
                                 <option <?php if (isset($selectnom) && $selectnom=="Décroissant") echo "selected";?>>Décroissant</option>
                             </select>
-                            <span><input type="submit" name="submit" value="submit" /></span>
+                            <span><input type="submit" name="submit" value="Trier" /></span>
                         </form>
                     </section>
                     <!--PAR VILLE-->
@@ -67,7 +67,7 @@ if (isset($_POST['submitDelete']))
                                 <option <?php if (isset($selectville) && $selectville=="Croissant") echo "selected";?>>Croissant</option>
                                 <option <?php if (isset($selectville) && $selectville=="Décroissant") echo "selected";?>>Décroissant</option>
                             </select>
-                            <span><input type="submit" name="submit" value="submit" /></span>
+                            <span><input type="submit" name="submit" value="Trier" /></span>
                         </form>
                     </section>
                     <!--PAR PROFIL-->
@@ -79,7 +79,7 @@ if (isset($_POST['submitDelete']))
                                 <option <?php if (isset($selectprofil) && $selectprofil=="Croissant") echo "selected";?>>Croissant</option>
                                 <option <?php if (isset($selectprofil) && $selectprofil=="Décroissant") echo "selected";?>>Décroissant</option>
                             </select>
-                            <span><input type="submit" name="submit" value="submit" /></span>
+                            <span><input type="submit" name="submit" value="Trier" /></span>
                         </form>
                     </section>
                     <!--PAR AGE-->
@@ -91,7 +91,7 @@ if (isset($_POST['submitDelete']))
                                 <option <?php if (isset($selectage) && $selectage=="Croissant") echo "selected";?>>Croissant</option>
                                 <option <?php if (isset($selectage) && $selectage=="Décroissant") echo "selected";?>>Décroissant</option>
                             </select>
-                            <span><input type="submit" name="submit" value="submit" /></span>
+                            <span><input type="submit" name="submit" value="Trier" /></span>
                         </form>
                     </section>
             </div>
