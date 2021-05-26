@@ -1,6 +1,8 @@
 <?php
 include_once('fonctions.php');
 
+//essai
+
 //Pour que les input du form prennent les valeurs de la ligne sélectionnée à partir de l'accueil
 $id = $_POST['idCarte'];
 
