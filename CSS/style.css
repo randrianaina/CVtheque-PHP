@@ -1,372 +1,160 @@
+/*
+font-family: 'New Tegomin', serif;
+font-family: 'Original Surfer', cursive;
+font-family: 'Zen Dots', cursive; 
+
+Palette URL: http://paletton.com/#uid=51C1p0khpOe2HU9aNPBm+QUsKVR
+*/
+
+*, ::after, ::before {
+  margin: 0;
+  padding-bottom: 0;
+}
+
 body {
-  background: #3d35a4;
+  background-color: #eff1f6;
+  margin: 0;
 }
 
-a {
-  text-decoration: none;
+/* ======== PAGE CONTENT ======== */
+#pageContent {
+  margin-top: 90px;
 }
 
-h1 {
-  text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 4rem;
-  color: #52dadaf1;
-  text-shadow: 2px -10px 7px #152020;
+#pageContent > h1 {
+	font-family: 'New Tegomin', serif;
+  font-size: 3.5em;
+	text-align: center;
+	color: #94cbba;
+	text-shadow: 4px 6px 4px #7c5b5c;
+	letter-spacing: 1pt;
 }
 
-h2 {
-  text-align: center;
-  text-decoration: none !important;
-  font-family: 'Montserrat Subrayada', sans-serif;
-}
-
-/* ACUEIL */
-#accueil {
-  /* Ex Body */
-  /* background-color: rgb(46, 41, 125); */
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  /* PAGE TITLE */
-  /**/
-  /* NAV & Co */
-  /* RECHERCHE*/
-  /* SUBMIT BUTTON */
-  /**/
-  /* FILTER SUBMIT BUTTONS */
-  /* TRI */
-  /**/
-  /**/
-  /* CARTES */
-  /* MEDIAS */
-  /*  */
-  /* Separateur Buttons */
-  /* Modification BTN */
-  /*  */
-  /* Suppression BTN */
-  /*  */
-  /* RESPONSIVE */
-  /* Full HD */
-  /* 3 Cards */
-  /* 2 Cards */
-  /* 1 Card */
-  /**/
-  /* Separator */
-  /**/
-  /* Sticky ADD Button*/
-  /*  */
-}
-
-#accueil p {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-}
-
-#accueil nav {
-  background-color: #6ba3a3;
-  padding-top: 1%;
-  padding-bottom: 1%;
+/*  ==== SECTION DE RECHERCHE & DE FILTRE ==== */
+#nav {
+  background-color: #94cbba;
+  padding: 20px 0 30px;
   border-radius: 15px;
-  margin-bottom: 10px;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 100%;
+}
+#nav input {
+  width: 65%;
+  display: inline;
 }
 
-#accueil label {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+#search, #filter, #searchFilter {
+  font-family: 'Original Surfer', cursive;
+}
+#search, #filter {
+  color: #254d71;
 }
 
-#accueil #RchNom {
-  height: 30px;
+/* ==== RECHERCHE ==== */
+#search {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#search label {
+  margin-right: 2%;
+  margin-bottom: 5px;
+  font-size: 20px;
+  width: 100%;
+}
+#search input {
   border-radius: 5px;
-  border: unset;
-  padding: 5px;
-  width: 48%;
-}
-
-#accueil #submit {
-  border-radius: 5px;
-  height: 30px;
-  width: 50px;
   border: none;
-  background-color: white;
-  padding-bottom: 1px !important;
-  margin-left: 1%;
+}
+
+#submit {
+  border-radius: 5px;
+  height: 30px;
+  width: 28%;
+  border: none;
+  color: #254d71;
+  background-color: #da9288;
+  margin-left: 10px;
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in;
+}
+#submit:hover {
+  box-shadow: 3px 3px 12px -5px #000000;
+  background-color: #254d71;
+  color: #da9288;
   -webkit-transition: .2s ease-in;
   transition: .2s ease-in;
 }
 
-#accueil #submit:hover {
-  -webkit-box-shadow: 3px 3px 12px -5px #000000;
-          box-shadow: 3px 3px 12px -5px #000000;
-  background-color: black;
-  color: white;
-  -webkit-transition: .2s ease-in;
-  transition: .2s ease-in;
+/* ==== FILTRES ==== */
+#filter {
+  margin-left: 20px;
+  width: 80%;
+  font-size: 20px;
 }
 
-#accueil #triDeSearch input {
+#searchFilter {
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.triFilter {
+  width: 60%;
+  height: 31px;
+  color: #707070;
+  font-size: 10px;
+  border: unset;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+#searchFilter input {
   border-radius: 5px;
   height: 30.5px;
-  width: 50px;
+  width: 30%;
   margin-left: 1%;
   border: none;
-  background-color: white;
+  color: #254d71;
+  background-color: #da9288;
   -webkit-transition: .2s ease-in;
   transition: .2s ease-in;
   margin-bottom: 0px;
   padding-top: 2px;
 }
-
-#accueil #triDeSearch input:hover {
-  -webkit-box-shadow: 3px 3px 12px -5px #000000;
-          box-shadow: 3px 3px 12px -5px #000000;
-  background-color: black;
-  color: white;
-  -webkit-transition: .2s ease-in;
-  transition: .2s ease-in;
-}
-
-#accueil .tri {
-  background-color: #e8eeef;
-  width: 50%;
-  height: 31px;
-  color: black;
-  font-size: 10px;
-  border: unset;
-  font-size: 14px;
-}
-
-#accueil option {
-  width: 50%;
-}
-
-#accueil .triName,
-#accueil h2 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-#accueil h2 {
-  font-weight: 300;
-  font-size: 15pt;
-  margin-top: 21px;
-}
-
-#accueil main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 100%;
-  opacity: 0.8;
-  height: 100%;
-  border-radius: 0px 0px 15px 0px;
-  z-index: 1;
-}
-
-#accueil a {
-  text-decoration: none;
-  color: black;
-}
-
-#accueil br {
-  line-height: 5px;
-}
-
-#accueil .far {
-  font-size: 50px;
-  color: #3b5f5f;
-}
-
-#accueil .cartes {
-  background-color: #cceccc;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  width: 300px;
-  margin: 1%;
-  padding: 1%;
-  border-radius: 15px;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-
-#accueil .cartes:hover {
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-  background-color: #0d0e0d;
-}
-
-#accueil .cartes:hover .far, #accueil .cartes:hover .Name, #accueil .cartes:hover .profil, #accueil .cartes:hover .ville, #accueil .cartes:hover .age, #accueil .cartes:hover .portable {
-  color: #cceccc;
-  text-shadow: 2px 1px 8px #16203b;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-
-#accueil .cartes:hover #CV, #accueil .cartes:hover #website, #accueil .cartes:hover #email {
-  color: #cceccc;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-
-#accueil .Name {
-  font-weight: bold;
-  font-size: x-large;
-  color: #194545;
-  margin-top: 20px;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-
-#accueil .profil {
+#searchFilter input:hover {
+  box-shadow: 3px 3px 12px -5px #000000;
+  background-color: #254d71;
+  color: #da9288;
   font-weight: bolder;
-  font-size: larger;
-  color: #194545;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+  font-size: 1rem;
+  letter-spacing: 3pt;
 }
 
-#accueil .age, #accueil .portable {
-  color: #194545;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+option {
+  width: 50%;
 }
 
-#accueil #CV, #accueil #website, #accueil #email {
-  color: #194545;
-  margin-bottom: 5px;
-  -webkit-transition-duration: 0.3s ease-in;
-          transition-duration: 0.3s ease-in;
-  font-size: 20px;
+/* ==== AFFICHAGE DES CARTES ==== */
+#cardContainer {
+    margin: 50px 0 90px;
+    display: grid;
+    gap: 20px;
+    justify-content: center;
 }
 
-#accueil #CV:hover, #accueil #website:hover, #accueil #email:hover {
-  color: #4ECFD3;
-  -webkit-transition-duration: 0.3s ease-in;
-          transition-duration: 0.3s ease-in;
-}
-
-#accueil span {
-  font-size: 15px;
-}
-
-#accueil .modifier {
-  margin: 5px;
-  width: 30px;
-  height: 30px;
-  background-color: #42588b;
-  font-weight: bold;
+ .card {
+  font-family: 'New Tegomin', serif;
+  background-color: #254d71;
+  text-align: center;
   border-radius: 15px;
-  border: 0px;
-  opacity: 0.8;
-  z-index: 3;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+  transition: 1s ease;
+  min-width: 290px;
 }
-
-#accueil .modifier i {
-  color: white;
-  padding-top: 4px;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-}
-
-#accueil .modifier:hover {
-  background-color: #cceccc;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-  opacity: 1;
-  border-radius: 5px;
-}
-
-#accueil .modifier:hover i {
-  color: #194545;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-}
-
-#accueil .supprimer {
-  margin: 5px;
-  width: 30px;
-  height: 30px;
-  background-color: #42588b;
-  font-weight: bold;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-  border-radius: 45px;
-  border: 0px;
-  opacity: 0.8;
-  z-index: 3;
-}
-
-#accueil .supprimer i {
-  color: white;
-  padding-top: 4px;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-}
-
-#accueil .supprimer:hover {
-  background-color: #cceccc;
-  border-radius: 5px;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-  opacity: 1;
-}
-
-#accueil .supprimer:hover i {
-  color: #194545;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-}
-
-@media screen and (max-width: 1216px) {
-  #accueil .cartes {
-    width: 29%;
-  }
-}
-
-@media screen and (max-width: 806px) {
-  #accueil .cartes {
-    width: 45%;
-  }
-  #accueil #triDeSearch {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    width: 100%;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  #accueil h2 {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  #accueil main {
-    width: 100%;
-  }
-  #accueil .cartes {
-    width: 100%;
-  }
-  #accueil h2 {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-#accueil .cardButtons {
+ /* Boutons en haut de carte */
+.cardButtons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,15 +165,78 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+} 
+
+.modify, .delete  {
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #62d1b4;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.8;
+  -webkit-transition: background-color .3s ease-in, border-radius .3s linear;
+  transition: background-color .3s ease-in, border-radius .3s linear;
 }
 
-#accueil #ajouter {
+.modify i, .delete i  {
+  color: #29526f;
+  padding-top: 4px;
+  -webkit-transition: .3s ease-out .2s;
+  transition: .3s ease-out .2s;
+}
+.modify:hover, .delete:hover  {
+  background-color: #29526f;
+  -webkit-transition: border-radius .3s ease-in, background-color .3s linear;
+  transition: border-radius .3s ease-in, background-color .3s linear;
+  opacity: 1;
+  border-radius: 5px;
+}
+.modify:hover i, .delete:hover i {
+  color: #da9288;
+  -webkit-transition: .3s ease;
+  transition: .3s ease-in;
+}
+
+.card, .name, .profil, .age, .portable {
+  color: #f9bab2;
+}
+/* Corps de carte */ 
+.name {
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 20px;
+}
+
+.profil {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.card:hover {
+  background-color: #f9bab2;
+}
+ .card:hover .far, .card:hover .name, .card:hover .profil, .card:hover .ville, .card:hover .age, .card:hover .portable {
+  color: #29526f;
+}
+
+#CV, #website, #email {
+  color: #29526f;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+#CV:hover, #website:hover, #email:hover  {
+  color: #62d1b4;
+}
+
+/* ==== BOUTON REDIRECTION FORMULAIRE AJOUT ==== */
+#add {
   position: fixed;
   right: 15px;
   bottom: 15px;
   width: 60px;
   height: 60px;
-  background-color: #194545;
+  background-color: #da9288;
   font-weight: bold;
   border-radius: 45px;
   border: unset;
@@ -395,364 +246,173 @@ h2 {
   transition: .5s ease;
 }
 
-#accueil #ajouter i {
+#add i {
   color: white;
   padding: 2px 0px 0px 0px;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 
-#accueil #ajouter:hover {
-  background-color: #cceccc;
+#add:hover {
+  background-color: #62d1b4;
   opacity: 1;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 
-#accueil #ajouter:hover i {
-  color: #173A4D;
+#add:hover i {
+  color: #29526f;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 
-/*  */
-/*  */
-/* FORMULAIRE */
-#formulaire {
-  /* background-color: rgb(32, 32, 135); */
-  color: white;
-  /* #footerprofil{
-        display:flex;
-        flex-direction:row;
-    } */
-  /* .labeli{
-        margin-left:0px;
-    } */
-  /* RESPONSIVE */
-  /* @media screen and (max-width:1216px){
-                    
-                #colonne1fiche{
-                    width:90%;
-                }
-                
-                #colonne2fiche{
-                    width:90%;
-                }
-                
-                    
-                .widget{
-                    width:70%;
-                }
-                
-                .widget2{
-                    width:80%;
-                }
-                
-                .widget4{
-                    display:flex;
-                    margin:10px auto 10px auto;
-                }
-                
-                #colonnesfiche{
-                    display:flex;
-                }
-                
-                .contenu{
-                    width:90%;
-                }
-                .colonneprofil{
-                    width:30%;
-                }
-                
-        }
-
-        @media screen and (max-width:850px){
-                .widget{
-                    width:80%;
-                }
-                
-                .widget2{
-                    width:80%;
-                }
-                
-                .widget4{
-                    display:flex;
-                    margin:10px auto 10px auto;
-                }
-                
-                #colonnesfiche{
-                    display:flex;
-                flex-direction: column;
-                }
-                
-                .contenu{
-                    width:90%;
-                }
-                
-                #labelcv{
-                    margin:0 0 0 0;
-                }
-                
-        }
-
-        @media screen and (max-width:550px){
-
-            .widget{
-                width:70%;
-            }
-            
-            .widget2{
-                width:100%;
-            }
-            
-            .widget4{
-                display:flex;
-                margin:10px auto 10px auto;
-            }
-            
-            .special1{
-                width:20%;
-            }
-            .special2{
-                width:20%;
-            }
-            
-            #colonnesfiche{
-                display:flex;
-            flex-direction: column;
-            }
-            
-            .contenu{
-                width:80%;
-            }
-            #footerprofil{
-                display:flex;
-            flex-direction: column;
-            }
-            .colonneprofil{
-                width:70%;
-            }
-        } */
-  /*  */
-  /* RETURN BUTTON */
-  /*  */
+#add > a {
+  text-decoration: none;
+  color: #f9bab2;
 }
 
-#formulaire input {
-  border-radius: 10px !important;
-  border: none;
-}
-
-#formulaire input:focus {
-  border-color: #000000 !important;
-}
-
-#formulaire #age {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#formulaire label {
-  /* margin-left: 60px; 
-        margin-bottom: 1px; */
-  font-size: 20px;
-}
-
-#formulaire .special1 {
-  width: 20%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  background-color: #e8eeef;
-  border-radius: 5px;
-  padding: 9px;
-  display: block;
-  font-size: 16px;
-  background: #FFFFFF;
-}
-
-#formulaire .special2 {
-  width: 55px;
-  margin-left: 60px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  background-color: #e8eeef;
-  border-radius: 5px;
-  padding: 9px;
-  display: block;
-  font-size: 16px;
-  background: #FFFFFF;
-  background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
-}
-
-#formulaire .special3 {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 0px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-
-#formulaire hr {
-  width: 80%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-#formulaire .widget {
-  border: none;
-  padding: 9px;
-  display: block;
-  font-size: 16px;
-  background: #FFFFFF;
-  /* background: 
-            -webkit-gradient(
-                linear, 
-                left top, 
-                left 25, 
-                from(#FFFFFF), 
-                color-stop(4%, #EEEEEE), 
-                to(#FFFFFF)
-            );
-        background: 
-            -moz-linear-gradient(
-                top, 
-                #FFFFFF,
-                #EEEEEE 1px, 
-                #FFFFFF 25px
-                ); */
-  /* margin-left: 60px; */
+/* ==== FOOTER ==== */
+#footer {
+  font-family: 'Original Surfer', cursive;
+  font-size: 1.1em;
+  padding: 20px 0 10px;
+  height: 80px;
   width: 100%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  margin-right: 0px;
-}
-
-#formulaire .widget2 {
-  border: solid 1px #E5E5E5;
-  padding: 9px;
-  display: block;
-  font-size: 16px;
-  background: #FFFFFF;
-  background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
-  width: 100%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  margin-right: 0px;
-}
-
-#formulaire .widget3 {
-  border: solid 1px #E5E5E5;
-  margin: 5px 30px 10px 30px;
-  padding: 9px;
-  display: block;
-  font-size: 16px;
-  background: #FFFFFF;
-  background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
-  width: 100%;
-}
-
-#formulaire .widget4 {
-  display: block;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  border-radius: 5px;
-  border: unset;
-}
-
-#formulaire .widget4 input[type=button] {
-  background-color: #42588b;
-}
-
-#formulaire .contenu {
-  /* Uniquement centrer le formulaire sur la page */
-  margin: 0 auto;
-  width: 1200px;
-  padding: 1em;
-  border-radius: 1em;
-  background: rgba(204, 236, 204, 0.7);
-  font-size: 16px;
-  margin-top: 50px;
-}
-
-#formulaire #colonnesfiche {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: #254d71;
+  color: #da9288;
+  border-radius: 10px 10px  0 0;
+  opacity: 0.9;
   display: flex;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
-
-#formulaire #footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
+#footer p {
   display: flex;
+  align-items: center;
+}
+#footerSymbols {
+  font-size: 1.6em;
+  align-items: center;
+  margin-right: 8%;
 }
 
-#formulaire .widget5 {
-  padding: 6px 0 6px 0;
-  background: #f5f5f5;
-  color: black;
-  border-radius: 10px;
-  height: 40px;
-  width: 330px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-weight: bolder;
-  border: unset;
-  font-size: 20px;
-  letter-spacing: 5px;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+/* ============= MEDIA QUERIES ============= */
+
+/* ====== ECRAN 600 PX ====== */
+@media screen and (min-width: 600px) {
+  #nav {
+    width: 95%;
+  }
+  #submit {
+    width: 14%;
+  }
 }
 
-#formulaire .widget5:hover {
-  background: #1d1d1d;
-  color: white;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+/* ====== ECRAN 767 PX ====== */
+@media screen and (min-width: 767px) {
+  #header {
+    grid-template-columns: 80px 200px 1fr;
+    align-items: center;
+  }
+  #header > a {
+    font-size: 0.5em;
+  }
+  #headerNav {
+    position: static;
+    background-color: transparent;
+    display: block !important;
+  }
+  #headerNav ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+    margin-top: -1px;
+  }
+  #headerNav a {
+    font-size: 1.1em;
+    padding: 0 10px;
+    border-bottom: 0px solid #da9288;
+    transition: border-width .2s, color .2s .2s;
+    margin: 0;
+  }
+  #headerNav a:hover {
+    color: #da9288;
+    border-bottom: 3px solid #da9288;
+    transition: color .2s, border-width .2s .2s;
+  }
+  #menuToggle {
+      display:  none;
+  }
+	#pageContent > h1 {
+    font-size: 6em;
+		font-weight: 500;
+		letter-spacing: 2pt;
+	}
+  #nav {
+    width: 90%;
+  }
+  #searchFilter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: 60px auto 90px;
+
+  }
+  .card {
+    width: 100%;
+  }
 }
 
-#formulaire input[type=button] {
-  height: 100px;
+/* ====== ECRAN 1024 PX ====== */
+@media screen and (min-width: 1024px) {
+  #nav {
+    width: 95%;
+  }
+  #search input {
+    width: 50%;
+  }
+  #submit {
+    width: 15%;
+  }
+  #searchFilter input {
+    width: 25%;
+  }
+
+  #cardContainer {
+    grid-template-columns: repeat(3, 1fr);
+    width: 95%;
+    margin: 60px auto 90px;
+  }
 }
 
-#formulaire #retour {
-  position: -webkit-sticky;
-  position: sticky;
-  left: 15px;
-  top: 15px;
-  width: 60px;
-  height: 60px;
-  background-color: #194545;
-  font-weight: bold;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-  border-radius: 45px;
-  border: 0px;
-  opacity: 0.8;
-  z-index: 3;
+/* ====== ECRAN 1200 PX ====== */
+@media screen and (min-width: 1200px) {
+  #cardContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #search input {
+    width: 40%;
+  }
+  #submit {
+    width: 10%;
+  }
+
 }
 
-#formulaire i {
-  color: white;
-  padding: 2px 0px 0px 0px;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+/* ====== ECRAN 1600 PX ====== */
+@media screen and (min-width: 1600px) {
+  #cardContainer {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px
+  }
+  #submit {
+    width: 5%;
+  }
+
 }
 
-#formulaire #retour:hover {
-  background-color: #cceccc;
-  opacity: 1;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-
-#formulaire #retour:hover i {
-  color: #173A4D;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-
-/*  */
-/*# sourceMappingURL=style.css.map */
